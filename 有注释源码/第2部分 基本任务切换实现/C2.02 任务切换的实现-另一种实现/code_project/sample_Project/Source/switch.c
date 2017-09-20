@@ -59,7 +59,7 @@ __asm void PendSV_Handler (void) {
     IMPORT saveAndLoadStackAddr
     
     // 切换第一个任务时,由于设置了PSP=MSP，所以下面的STMDB保存会将R4~R11
-    // 保存到系统启动时默认的堆栈中，而不是某个任务
+    // 保存到系统启动时默认的MSP堆栈中，而不是某个任务
     MRS     R0, PSP                 
     STMDB   R0!, {R4-R11}               // 将R4~R11保存到当前任务栈，也就是PSP指向的堆栈
     BL      saveAndLoadStackAddr        // 调用函数：参数通过R0传递，返回值也通过R0传递 
@@ -85,8 +85,7 @@ uint32_t saveAndLoadStackAddr (uint32_t stackAddr) {
 ** Returned value       :   无
 ***********************************************************************************************************/
 void tTaskRunFirst () {
-    // 这里设置了一个标记，PSP = MSP, 用于与tTaskSwitch()区分，用于在PEND_SV
-    // 中判断当前切换是tinyOS启动时切换至第1个任务，还是多任务已经跑起来后执行的切换
+    // 这里设置了一个标记，PSP = MSP, 二者都指向同一个堆栈
     __set_PSP(__get_MSP());
 
     MEM8(NVIC_SYSPRI2) = NVIC_PENDSV_PRI;   // 向NVIC_SYSPRI2写NVIC_PENDSV_PRI，设置其为最低优先级
