@@ -8,7 +8,7 @@
 # 课程说明
 该课程为一系列视频课程，49个课时，一步步教你学习如何开发一个自己的RTOS。
 
-关于该课程的具体信息，请访问电子发烧友学院：http://t.elecfans.com/1927.html
+该课程配套相应的学习指南，请见<http://01ketang.cc/course/guide/diyrtos/>。
 
 # 联系方式
 请访问我的GitHub主页，获取联系邮箱。
