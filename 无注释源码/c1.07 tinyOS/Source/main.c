@@ -31,7 +31,6 @@ BlockType_t block;
 
 int main ()
 {
-	block.stackPtr = &stackBuffer[1024];
 	blockPtr = &block;
 	for (;;)
 	{
@@ -40,6 +39,9 @@ int main ()
 		flag = 1;
 		delay(100);
 		
+		// 这里做了较小的调整，与视频中不太一致
+		// 如果按视频中所写，全速运行稍长时间会导致switch里内存写越办
+		block.stackPtr = &stackBuffer[1024];
 		triggerPendSVC();
 	}
 }
