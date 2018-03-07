@@ -8,7 +8,7 @@
 # 课程说明
 该课程为一系列视频课程，49个课时，一步步教你学习如何开发一个自己的RTOS。
 
-该课程配套相应的学习指南，请见<http://01ketang.cc/course/guide/diyrtos/>。
+该课程配套相应的学习指南，请见<http://01ketang.cc>。
 
 # 联系方式
-请访问我的GitHub主页，获取联系邮箱。
+请访问01课堂主页:<http://01ketang.cc>。
