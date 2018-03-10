@@ -86,7 +86,7 @@ int main ()
     tTaskInit(&tTask1, task1, (void *)0x11111111, &task1Env[1024]);
     tTaskInit(&tTask2, task2, (void *)0x22222222, &task2Env[1024]);
 
-    block.stackPtr = &stackBuffer[1024];
+    block.stackPtr = &stackBuffer[1024];    // 请参考学习指南的常见问题，有关于为什么是1024的解答
     blockPtr = &block;
 
     for (;;) {

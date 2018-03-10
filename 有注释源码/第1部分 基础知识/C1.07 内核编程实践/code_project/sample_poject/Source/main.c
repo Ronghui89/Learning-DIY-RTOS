@@ -63,7 +63,7 @@ int main ()
         
         // 这里做了较小的调整，与视频中不太一致
         // 如果按视频中所写，全速运行稍长时间会导致switch里内存写越办
-        block.stackPtr = &stackBuffer[1024];
+        block.stackPtr = &stackBuffer[1024];		// 有同学对这里为什么是1024有疑问，请看下学习指南的常见问题，有解答
         triggerPendSVC();
     }
     
