@@ -291,6 +291,10 @@ int main ()
     tTaskInit(&tTask1, task1Entry, (void *)0x11111111, &task1Env[1024]);
     tTaskInit(&tTask2, task2Entry, (void *)0x22222222, &task2Env[1024]);
 
+    // 接着，将任务加入到任务表中
+    taskTable[0] = &tTask1;
+    taskTable[1] = &tTask2;
+    
     // 创建空闲任务
     tTaskInit(&tTaskIdle, idleTaskEntry, (void *)0, &idleTaskEnv[1024]);
     idleTask = &tTaskIdle;
